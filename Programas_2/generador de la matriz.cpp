@@ -1,7 +1,7 @@
 /*
 	Name: Matriz enesima de Vandermonde 
 	Author: Luis Rafael Alberto Limachi
-	Description: Generar matrices enésimas de Vandermonde  
+	Description: Generar matrices enÃ©simas de Vandermonde  
 	y calcular el determinante
 */
 
@@ -17,13 +17,15 @@ void print2(char *var, int **arr, int nx, int ny);
 void print1(char *var, int *arr, int nx);
 void matrizVandermonde(int *nsimo, int **vander, int nx);
 long long factorial (long long n);
+char stopApp;
 
 int main(int argc, char **argv)
 {
+	do{
   int nx;
   int *nsimo, **vandermonde;
   int i;
-  
+  cout<<endl;
   cout<<"Ingrese el enesimo de Vandermonde a generar"<<endl;
   cin>>nx;
   vandermonde = matriz(nx, nx); // crea la salida de la matriz
@@ -39,7 +41,15 @@ int main(int argc, char **argv)
   // memoria libre asignada
   free(nsimo);
   matriz_libre(vandermonde);
-  cout<<"a ver que sale:"<<factorial(nx);
+  cout<<"El determinante es:"<<factorial(nx)<<endl;
+  cout<<endl;
+  cout << "Para seguir en la App digite 'Y' (Y/N)" << endl;
+        cin >> stopApp;
+
+    } 
+	while(toupper(stopApp) == 'Y');
+system("PAUSE");
+    return 0;
 }
 
 void matrizVandermonde(int *nsimo, int **vander, int nx)
@@ -101,15 +111,14 @@ void print1(char *var, int *arr, int nx)
     printf("%i \t", arr[i]);   
     printf("\n\n");
 }
-long long factorial (long long n)// funcion para el factorial
+long long factorial (long long n)// funcion para determinante
 {
-	int m=0;
-	int h=0;
-	long long fact =1;
-	for (long long i = 1; i <= n; i++)
+	long fact =1;
+	long det = 1;
+	for (long long i = 1; i < n; i++)
 	{
-	h=n-i;
-	fact=fact*(n-h);
+		fact=fact*i;
+		det =det*fact;
 	}
-	return fact;
+	return det;
 }

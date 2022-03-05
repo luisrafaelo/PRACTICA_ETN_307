@@ -1,9 +1,9 @@
 /*
 	Name: Hallar las partes que componen un triangulo
 	Author: Luis Rafael Alberto Limachi
-	Description: 1 Resoluci髇 de tri醤gulos  dados 3 datos
-	  tres lados , tres 醤gulos, 2 lados  1 醤gulo ,
-	  2 醤gulos 1 lado  resolver los otros tres valores  y 
+	Description: 1 Resoluci贸n de tri谩ngulos  dados 3 datos
+	  tres lados , tres 谩ngulos, 2 lados  1 谩ngulo ,
+	  2 谩ngulos 1 lado  resolver los otros tres valores  y 
 	  calcular  el area y superficie del triangulo y medianas
 */
 #include <iostream>
@@ -1268,7 +1268,7 @@ do{
 								}
 		    break;// fin b c
     
-		    default: cout << "Usted ha ingresado una opci髇 incorrecta"<<endl;
+		    default: cout << "Usted ha ingresado una opci贸n incorrecta"<<endl;
 							}
     break; // fin b
     case 'c': // inicio c
@@ -1364,7 +1364,7 @@ do{
 								}
 		    break;// fin c C
     
-		    default: cout << "Usted ha ingresado una opci髇 incorrecta"<<endl;
+		    default: cout << "Usted ha ingresado una opci贸n incorrecta"<<endl;
 							}
     break;// fin c
     case 'A': //inicio A
@@ -1460,7 +1460,7 @@ do{
 								}
 		    break;// fin A C
     
-		    default: cout << "Usted ha ingresado una opci髇 incorrecta"<<endl;
+		    default: cout << "Usted ha ingresado una opci贸n incorrecta"<<endl;
 							}   
     break;// fin A
 	case 'B': // inicio B
@@ -1555,7 +1555,7 @@ do{
 								}
 		    break;// fin B C
     
-		    default: cout << "Usted ha ingresado una opci髇 incorrecta"<<endl;
+		    default: cout << "Usted ha ingresado una opci贸n incorrecta"<<endl;
 							}	
     break;// fin B
     
@@ -1651,11 +1651,11 @@ switch(dato2)	{
 								}
 		    break; // fin C a
     
-		    default: cout << "Usted ha ingresado una opci髇 incorrecta"<<endl;
+		    default: cout << "Usted ha ingresado una opci贸n incorrecta"<<endl;
 							}
     break;// fin C
     cout <<""<<endl;
-    default: cout << "    Usted ha ingresado una opci髇 incorrecta"<<endl;
+    default: cout << "    Usted ha ingresado una opci贸n incorrecta"<<endl;
 }
 cout <<""<<endl;
 cout << "Para seguir en la App digite 'Y' (Y/N)" << endl;

@@ -4,7 +4,7 @@
 	Description: 1 Resolución de triángulos  dados 3 datos
 	  tres lados , tres ángulos, 2 lados  1 ángulo ,
 	  2 ángulos 1 lado  resolver los otros tres valores  y 
-	  calcular  el area y superficie del triangulo y medianas
+	  calcular  el area y superficie del triangulo y medianas.
 */
 #include <iostream>
 #include <conio.h>

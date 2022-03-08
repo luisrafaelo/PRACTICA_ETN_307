@@ -1,6 +1,6 @@
 /*
 	Name: Matriz enesima de Vandermonde 
-	Author: Luis Rafael Alberto Limachi
+	Autores:  Luis Rafael Alberto Limachi
 	Description: Generar matrices enésimas de Vandermonde  
 	y calcular el determinante
 */
@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <math.h>
+#include <limits>
 
 using namespace std;
 int **matriz(int fila, int columna); // para crear la matriz
@@ -21,34 +22,55 @@ char stopApp;
 
 int main(int argc, char **argv)
 {
-	do{
-  int nx;
-  int *nsimo, **vandermonde;
-  int i;
-  cout<<endl;
-  cout<<"Ingrese el enesimo de Vandermonde a generar"<<endl;
-  cin>>nx;
-  vandermonde = matriz(nx, nx); // crea la salida de la matriz
-  nsimo = (int*) calloc (nx, sizeof(int));
-  for(i=0; i<nx; i++) //llena el enesimo valor
+	do
+    { int nx;
+    int *nsimo, **vandermonde;
+    int i;
+    while (true)        //Para la verificacion de datos
+    {
+        cout << "\nIngrese el enesimo de Vandermonde a generar (De 1 a 9, enteros): "; cin >> nx;
+        if (cin.fail()) // Si nada se pone será verdadero
+        {   cout<<"Caracter invalido\n";
+            cin.clear(); // Para resetear los bits
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+            //ignore() es usado para limpiar los datos incorrectos
+            continue; // El ciclo iniciará de nuevo
+        }
+        //Para limpiar datos adicionales como: atr15 (atr es adicional)
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        // Remueve los datos adicionales de la entrada de datos
+        if (cin.gcount() > 1) 
+        // Devolvera mas de 1 si hay algun sobrante de datos invalidos
+        {   cout<<"Caracter invalido, no te pases de listo\n";
+            continue; // el ciclo iniciará de nuevo
+        }
+        if (nx>=10 || nx<=0)       //poniendo limite al numero de caracteres escritos
+        {   cout<<"Limite de caracteres alcanzado\n";
+            continue;   //el ciclo iniciará de nuevo
+        }
+        break; //rompe el ciclo
+    }
+    vandermonde = matriz(nx, nx); // crea la salida de la matriz
+    nsimo = (int*) calloc (nx, sizeof(int));
+    for(i=0; i<nx; i++) //llena el enesimo valor
     nsimo[i] = i+1;
-  
-  matrizVandermonde(nsimo, vandermonde, nx); // proceso de vandermonde
-  
-  print1("enesimo", nsimo, nx); //muestra la salida 
-  print2("vandermonde", vandermonde, nx, nx); 
-  
-  // memoria libre asignada
-  free(nsimo);
-  matriz_libre(vandermonde);
-  cout<<"El determinante es:"<<factorial(nx)<<endl;
-  cout<<endl;
-  cout << "Para seguir en la App digite 'Y' (Y/N)" << endl;
-        cin >> stopApp;
+    
+    matrizVandermonde(nsimo, vandermonde, nx); // proceso de vandermonde
+      
+    print1("enesimo" , nsimo, nx); //muestra la salida 
+    print2("vandermonde" , vandermonde, nx, nx); 
+
+    // memoria libre asignada
+    free(nsimo);
+    matriz_libre(vandermonde);
+    cout<<"El determinante es:"<<factorial(nx)<<endl;
+    cout<<endl;
+    cout << "Para seguir en la App digite 'Y' (Y/N)" << endl;
+          cin >> stopApp;
 
     } 
 	while(toupper(stopApp) == 'Y');
-system("PAUSE");
+  system("PAUSE");  
     return 0;
 }
 
@@ -113,8 +135,8 @@ void print1(char *var, int *arr, int nx)
 }
 long long factorial (long long n)// funcion para determinante
 {
-	long fact =1;
-	long det = 1;
+	long long fact =1;
+	long long det = 1;
 	for (long long i = 1; i < n; i++)
 	{
 		fact=fact*i;

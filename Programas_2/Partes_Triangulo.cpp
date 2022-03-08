@@ -1,10 +1,10 @@
 /*
 	Name: Hallar las partes que componen un triangulo
-	Author: Luis Rafael Alberto Limachi
+	Autores: Luis Rafael Alberto Limachi
 	Description: 1 Resolución de triángulos  dados 3 datos
 	  tres lados , tres ángulos, 2 lados  1 ángulo ,
 	  2 ángulos 1 lado  resolver los otros tres valores  y 
-	  calcular  el area y superficie del triangulo y medianas.
+	  calcular  el area y superficie del triangulo y medianas
 */
 #include <iostream>
 #include <conio.h>
@@ -981,12 +981,91 @@ do{
 			    break;
     
 			    case 'A': // para a C A
+			    		    if (num3+num2<180)
+			    {
+					aux1=180-(num2+num3);
+					aux2=num1*sin(num2*rad)/sin(num3*rad);
+					aux3=sqrt(num1*num1+aux2*aux2-(2*cos(aux1*rad)*num1*aux2));
+										
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<num1<<endl;
+					cout << "  b: "<<aux3<<endl;
+					cout << "  c: "<<aux2<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<num3<<endl;
+					cout << "  B: "<<aux1<<endl;
+					cout << "  C: "<<num2<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(aux2*aux2+aux3*aux3)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+aux3*aux3)-aux2*aux2))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(aux2*aux2+num1*num1)-aux3*aux3))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(aux1*rad)*aux2)/2<<endl;
+					cout << "el perimetro:  "<<num1+aux3+aux2<<endl;	
+				}
+				else
+			    cout<<"NO TIENE SOLUCION"<<endl;
 			    break;
     
 			    case 'B': // para a C B
+			    if (num3+num2<180)
+			    {
+					aux1=180-(num2+num3);
+					aux2=num1*sin(num3*rad)/sin(aux1*rad);
+					aux3=num1*sin(num2*rad)/sin(aux1*rad);
+										
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<num1<<endl;
+					cout << "  b: "<<aux2<<endl;
+					cout << "  c: "<<aux3<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<aux1<<endl;
+					cout << "  B: "<<num3<<endl;
+					cout << "  C: "<<num2<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(aux2*aux2+aux3*aux3)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+aux3*aux3)-aux2*aux2))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(aux2*aux2+num1*num1)-aux3*aux3))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(num2*rad)*aux2)/2<<endl;
+					cout << "el perimetro:  "<<num1+aux2+aux3<<endl;	
+				}
+				else
+			    cout<<"NO TIENE SOLUCION"<<endl;
 			    break;
     
 			    case 'b': // para a C b
+			    if (num2!=180)
+				{
+					aux1=sqrt(num1*num1+num3*num3-(2*num1*num3*cos(num2*rad)));		
+					aux2=acos((num3*num3+aux1*aux1-num1*num1)/(2*num3*aux1));	
+					aux3=acos((aux1*aux1+num1*num1-num3*num3)/(2*num1*aux1));	
+					
+										
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<num1<<endl;
+					cout << "  b: "<<num3<<endl;
+					cout << "  c: "<<aux1<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<aux2*grad<<endl;
+					cout << "  B: "<<aux3*grad<<endl;
+					cout << "  C: "<<num2<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(num3*num3+aux1*aux1)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+aux1*aux1)-num3*num3))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(num3*num3+num1*num1)-aux1*aux1))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(num2*rad)*num3)/2<<endl;
+					cout << "el perimetro:  "<<num1+num3+aux1<<endl;
+				}
+			    else
+			    cout<<"NO TIENE SOLUCION"<<endl;
 			    break;
     
 			    default: cout << "Usted ha ingresado una opcion incorrecta"<<endl;
@@ -1190,6 +1269,33 @@ do{
 			    break;
     
 			    case 'C': //para b a C
+			     if (num3!=180)
+				{
+					aux1=sqrt(num1*num1+num2*num2-(2*num1*num2*cos(num3*rad)));		
+					aux2=acos((num2*num2+aux1*aux1-num1*num1)/(2*num2*aux1));	
+					aux3=acos((aux1*aux1+num1*num1-num2*num2)/(2*num1*aux1));	
+					
+										
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<num2<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<aux1<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<aux3*grad<<endl;
+					cout << "  B: "<<aux2*grad<<endl;
+					cout << "  C: "<<num3<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(num2*num2+aux1*aux1)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+aux1*aux1)-num2*num2))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(num2*num2+num1*num1)-aux1*aux1))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(num3*rad)*num2)/2<<endl;
+					cout << "el perimetro:  "<<num1+num2+aux1<<endl;
+				}
+			    else
+			    cout<<"NO TIENE SOLUCION"<<endl;
 			    break;
     
 			    default: cout << "Usted ha ingresado una opcion incorrecta"<<endl;
@@ -1199,12 +1305,142 @@ do{
 		    case 'c': //inicio b c
 		    switch(dato3)	{
 			    case 'a': //para b c a
+			    if(num1<num2+num3 and num2<num1+num3 and num3<num1+num2)//propiedad triangular
+						{
+					aux1=acos((num2*num2+num3*num3-num1*num1)/(2*num2*num3));	
+					aux2=acos((num3*num3+num1*num1-num2*num2)/(2*num1*num3));	
+					aux3=acos((num2*num2-num3*num3+num1*num1)/(2*num2*num1));
+					
+					cout << ""<<endl;
+					
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<num3<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<num2<<endl;
+					
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<aux3*grad<<endl;
+					cout << "  B: "<<aux1*grad<<endl;
+					cout << "  C: "<<aux2*grad<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(num2*num2+num3*num3)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num2*num2+num1*num1)-num3*num3))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(num1*num1+num3*num3)-num2*num2))/2<<endl;
+					
+					cout << "el area:  "<<(num3*sin(aux2)*num1)/2<<endl;
+					cout << "el perimetro:  "<<num1+num2+num3<<endl;
+						}
+						else
+						cout << "los datos ingresados no cumplen la propiedad triangular"<<endl;
 			    break;
     
 			    case 'A': //para b c A
+			    if (num3!=180)
+				{
+					aux1=sqrt(num1*num1+num2*num2-(2*num1*num2*cos(num3*rad)));		
+					aux2=acos((num2*num2+aux1*aux1-num1*num1)/(2*num2*aux1));	
+					aux3=acos((aux1*aux1+num1*num1-num2*num2)/(2*num1*aux1));	
+					
+										
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<aux1<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<num2<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<num3<<endl;
+					cout << "  B: "<<aux2*grad<<endl;
+					cout << "  C: "<<aux3*grad<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(num2*num2+aux1*aux1)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num2*num2+num1*num1)-aux1*aux1))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(num1*num1+aux1*aux1)-num2*num2))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(num3*rad)*num2)/2<<endl;
+					cout << "el perimetro:  "<<num1+num2+aux1<<endl;
+				}
+			    else
+			    cout<<"NO TIENE SOLUCION"<<endl;
 			    break;
     
 			    case 'B': //para b c B
+			    if (num2*sin(num3*rad)<=num1)
+				{
+					if(num1<num2){
+					aux2=asin(num2*sin(num3*rad)/num1)*grad;
+					aux3=180-(num3+aux2);
+					aux1=num1*sin(aux3*rad)/sin(num3*rad);
+										
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<aux1<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<num2<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<aux3<<endl;
+					cout << "  B: "<<num3<<endl;
+					cout << "  C: "<<aux2<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(num2*num2+aux1*aux1)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+num2*num2)-aux1*aux1))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(num1*num1+aux1*aux1)-num2*num2))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(aux3*rad)*num2)/2<<endl;
+					cout << "el perimetro:  "<<num1+num2+aux1<<endl;
+					cout << " "<<endl;
+					cout << "Segunda solucion: "<<endl;
+					aux2=180-asin(num2*sin(num3*rad)/num1)*grad;
+					aux3=180-(num3+aux2);
+					aux1=num1*sin(aux3*rad)/sin(num3*rad);
+										
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<aux1<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<num2<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<aux3<<endl;
+					cout << "  B: "<<num3<<endl;
+					cout << "  C: "<<aux2<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(num2*num2+aux1*aux1)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+num2*num2)-aux1*aux1))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(num1*num1+aux1*aux1)-num2*num2))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(aux3*rad)*num2)/2<<endl;
+					cout << "el perimetro:  "<<num1+num2+aux1<<endl;
+				}
+				else
+				{
+					aux2=asin(num2*sin(num3*rad)/num1)*grad;
+					aux3=180-(num3+aux2);
+					aux1=num1*sin(aux3*rad)/sin(num3*rad);
+										
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<aux1<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<num2<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<aux3<<endl;
+					cout << "  B: "<<num3<<endl;
+					cout << "  C: "<<aux2<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(num2*num2+aux1*aux1)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+num2*num2)-aux1*aux1))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(num1*num1+aux1*aux1)-num2*num2))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(aux3*rad)*num2)/2<<endl;
+					cout << "el perimetro:  "<<num1+num2+aux1<<endl;
+				}
+			}
+			    else
+			    cout<<"NO TIENE SOLUCION"<<endl;
 			    break;
     
 			    case 'C': //para b c C
@@ -1436,6 +1672,20 @@ do{
 			    break;
     
 			    case 'C': // para A B C
+			    if (num1+num2+num3==180)
+			    {
+			    	cout <<endl;
+			        cout << "los angulos son: "<<endl;
+					cout << "  A: "<<num1<<endl;
+					cout << "  B: "<<num2<<endl;
+					cout << "  C: "<<num3<<endl;	
+					cout <<"El triangulo tiene infinitas soluciones"<<endl;
+					return 0;
+				}
+				else
+				cout <<endl;
+				cout <<"La suma de los angulos es:  "<<(num1+num2+num3)<<endl;
+				cout <<"Los valores son contradictorios, TIENEN QUE SUMAR 180 GRADOS"<<endl;
 			    break;
     
 			    default: cout << "Usted ha ingresado una opcion incorrecta"<<endl;

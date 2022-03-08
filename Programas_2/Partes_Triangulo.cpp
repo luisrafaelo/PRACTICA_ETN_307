@@ -1680,13 +1680,13 @@ do{
 					cout << "  A: "<<num1<<endl;
 					cout << "  B: "<<num2<<endl;
 					cout << "  C: "<<num3<<endl;	
-					cout <<"El triangulo tiene infinitas soluciones"<<endl;
-					return 0;
+					cout <<"El triangulo tiene infinitas soluciones"<<endl;					
 				}
 				else
-				cout <<endl;
+				{
 				cout <<"La suma de los angulos es:  "<<(num1+num2+num3)<<endl;
 				cout <<"Los valores son contradictorios, TIENEN QUE SUMAR 180 GRADOS"<<endl;
+				}
 			    break;
     
 			    default: cout << "Usted ha ingresado una opcion incorrecta"<<endl;

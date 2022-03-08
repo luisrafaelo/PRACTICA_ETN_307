@@ -1,6 +1,7 @@
 /*
 	Name: Hallar las partes que componen un triangulo
-	Autores: Luis Rafael Alberto Limachi
+	Autores: Alberto Limachi Luis Rafael
+	         Nina Mamani Itamar Esteban
 	Description: 1 Resolución de triángulos  dados 3 datos
 	  tres lados , tres ángulos, 2 lados  1 ángulo ,
 	  2 ángulos 1 lado  resolver los otros tres valores  y 

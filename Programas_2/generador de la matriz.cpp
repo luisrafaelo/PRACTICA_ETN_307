@@ -1,6 +1,7 @@
 /*
 	Name: Matriz enesima de Vandermonde 
-	Autores:  Luis Rafael Alberto Limachi
+	Autores: Alberto Limachi Luis Rafael
+	         Nina Mamani Itamar Esteban
 	Description: Generar matrices enésimas de Vandermonde  
 	y calcular el determinante
 */

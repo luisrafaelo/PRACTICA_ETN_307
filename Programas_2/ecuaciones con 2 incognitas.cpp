@@ -1,8 +1,8 @@
 /*
-	Name:  Resolver un sistema de 2 ecuaciones y 2 inc�gnitas
-	Author: Luis Rafael Alberto Limachi
-	Date: 04/03/22 14:26
-	Description: 
+	Name:  Ecuaciones lineales 2x2
+	Autores: Alberto Limachi Luis Rafael
+	         Nina Mamani Itamar Esteban
+	Description: Resolver un sistema de 2 ecuaciones y 2 incógnitas
 */
 
 #include <iostream> //librerias

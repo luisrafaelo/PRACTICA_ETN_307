@@ -1445,6 +1445,81 @@ do{
 			    break;
     
 			    case 'C': //para b c C
+			     if (num2*sin(num3*rad)<=num1)
+				{
+					if (num1>num2)
+				{
+					aux2=asin(num1*sin(num3*rad)/num2)*grad;
+					aux3=180-(num3+aux2);
+					aux1=num1*sin(aux3*rad)/sin(aux2*rad);
+									
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<aux1<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<num2<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<aux3<<endl;
+					cout << "  B: "<<aux2<<endl;
+					cout << "  C: "<<num3<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(num2*num2+aux1*aux1)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+aux1*aux1)-num2*num2))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(num2*num2+num1*num1)-aux1*aux1))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(aux3*rad)*num2)/2<<endl;
+					cout << "el perimetro:  "<<num1+num2+aux1<<endl;
+					cout << ""<<endl;
+					cout << "segunda solucion"<<endl;
+					aux2=180-asin(num1*sin(num3*rad)/num2)*grad;
+					aux3=180-(num3+aux2);
+					aux1=num1*sin(aux3*rad)/sin(aux2*rad);
+									
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<aux1<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<num2<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<aux3<<endl;
+					cout << "  B: "<<aux2<<endl;
+					cout << "  C: "<<num3<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(num2*num2+aux1*aux1)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+aux1*aux1)-num2*num2))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(num2*num2+num1*num1)-aux1*aux1))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(aux3*rad)*num2)/2<<endl;
+					cout << "el perimetro:  "<<num1+num2+aux1<<endl;
+				}
+				else{
+					aux2=asin(num1*sin(num3*rad)/num2)*grad;
+					aux3=180-(num3+aux2);
+					aux1=num1*sin(aux3*rad)/sin(aux2*rad);
+									
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<aux1<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<num2<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<aux3<<endl;
+					cout << "  B: "<<aux2<<endl;
+					cout << "  C: "<<num3<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(num2*num2+aux1*aux1)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+aux1*aux1)-num2*num2))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(num2*num2+num1*num1)-aux1*aux1))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(aux3*rad)*num2)/2<<endl;
+					cout << "el perimetro:  "<<num1+num2+aux1<<endl;
+				}
+				}
+			    else
+			    cout<<"NO TIENE SOLUCION"<<endl;
 			    break;
     
 			    default: cout << "Usted ha ingresado una opcion incorrecta"<<endl;
@@ -1454,15 +1529,171 @@ do{
 		    case 'A': //inicio b A
 		    switch(dato3)	{
 			    case 'c': // para b A c
+				if (num2!=180)
+				{
+					aux1=sqrt(num1*num1+num3*num3-(2*num1*num3*cos(num2*rad)));		
+					aux2=acos((num3*num3+aux1*aux1-num1*num1)/(2*num3*aux1));	
+					aux3=acos((aux1*aux1+num1*num1-num3*num3)/(2*num1*aux1));	
+					
+										
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<aux1<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<num3<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<num2<<endl;
+					cout << "  B: "<<aux2*grad<<endl;
+					cout << "  C: "<<aux3*grad<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(num3*num3+aux1*aux1)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+aux1*aux1)-num3*num3))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(num3*num3+num1*num1)-aux1*aux1))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(num2*rad)*num3)/2<<endl;
+					cout << "el perimetro:  "<<num1+num3+aux1<<endl;
+				}
+			    else
+			    cout<<"NO TIENE SOLUCION"<<endl;
 			    break;
     
 			    case 'a': //para b A a
+				if (num3*sin(num2*rad)<=num1)
+				{
+					if(num3<num1)
+					{
+					aux2=asin(num1*sin(num2*rad)/num3)*grad;
+					aux3=180-(num2+aux2);
+					aux1=num1*sin(aux3*rad)/sin(aux2*rad);
+					
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<num3<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<aux1<<endl;
+								//aCc-bAa		
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<num2<<endl;
+					cout << "  B: "<<aux2<<endl;
+					cout << "  C: "<<aux3<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(num3*num3+aux1*aux1)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+num3*num3)-aux1*aux1))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(num1*num1+aux1*aux1)-num3*num3))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(aux3*rad)*num3)/2<<endl;
+					cout << "el perimetro:  "<<num1+num3+aux1<<endl;
+					cout<<""<<endl;
+					cout<<"segunda solucion"<<endl;
+					aux2=180-asin(num1*sin(num2*rad)/num3)*grad;
+					aux3=180-(num2+aux2);
+					aux1=num1*sin(aux3*rad)/sin(aux2*rad);
+					
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<num3<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<aux1<<endl;
+								//aCc-bAa		
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<num2<<endl;
+					cout << "  B: "<<aux2<<endl;
+					cout << "  C: "<<aux3<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(num3*num3+aux1*aux1)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+num3*num3)-aux1*aux1))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(num1*num1+aux1*aux1)-num3*num3))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(aux3*rad)*num3)/2<<endl;
+					cout << "el perimetro:  "<<num1+num3+aux1<<endl;
+				}
+				else
+				{
+					aux2=asin(num1*sin(num2*rad)/num3)*grad;
+					aux3=180-(num2+aux2);
+					aux1=num1*sin(aux3*rad)/sin(aux2*rad);
+					
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<num3<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<aux1<<endl;
+								//aCc-bAa		
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<num2<<endl;
+					cout << "  B: "<<aux2<<endl;
+					cout << "  C: "<<aux3<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(num3*num3+aux1*aux1)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+num3*num3)-aux1*aux1))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(num1*num1+aux1*aux1)-num3*num3))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(aux3*rad)*num3)/2<<endl;
+					cout << "el perimetro:  "<<num1+num3+aux1<<endl;
+					}
+				}
+			
+			    else
+			    cout<<"NO TIENE SOLUCION"<<endl;
 			    break;
     
 			    case 'B': //para b A B
+				   if (num3+num2<180)
+			    {
+					aux1=180-(num2+num3);
+					aux2=num1*sin(num2*rad)/sin(num3*rad);
+					aux3=sqrt(num1*num1+aux2*aux2-(2*cos(aux1*rad)*num1*aux2));
+										
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<aux2<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<aux3<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<num2<<endl;
+					cout << "  B: "<<num3<<endl;
+					cout << "  C: "<<aux1<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(aux2*aux2+aux3*aux3)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+aux3*aux3)-aux2*aux2))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(aux2*aux2+num1*num1)-aux3*aux3))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(aux1*rad)*aux2)/2<<endl;
+					cout << "el perimetro:  "<<num1+aux3+aux2<<endl;	
+				}
+				else
+			    cout<<"NO TIENE SOLUCION"<<endl;
 			    break;
     
 			    case 'C': // para b A C
+				 if (num3+num2<180)
+			    {
+					aux1=180-(num2+num3);
+					aux2=num1*sin(num3*rad)/sin(aux1*rad);
+					aux3=num1*sin(num2*rad)/sin(aux1*rad);
+										
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<aux3<<endl;
+					cout << "  b: "<<num1<<endl;
+					cout << "  c: "<<aux2<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<num2<<endl;
+					cout << "  B: "<<aux1<<endl;
+					cout << "  C: "<<num3<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(aux2*aux2+aux3*aux3)-num1*num1))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num1*num1+aux3*aux3)-aux2*aux2))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(aux2*aux2+num1*num1)-aux3*aux3))/2<<endl;
+					
+					cout << "el area:  "<<(num1*sin(num2*rad)*aux2)/2<<endl;
+					cout << "el perimetro:  "<<num1+aux2+aux3<<endl;	
+				}
+				else
+			    cout<<"NO TIENE SOLUCION"<<endl;
 			    break;
     
 			    default: cout << "Usted ha ingresado una opcion incorrecta"<<endl;
@@ -1667,6 +1898,33 @@ do{
 			    break;
     
 			    case 'a': // para A B a
+				// PARA a B A
+			    if (num2+num1<180)
+			    {
+					aux1=180-(num1+num2);
+					aux2=num3*sin(num2*rad)/sin(num1*rad);
+					aux3=sqrt(num3*num3+aux2*aux2-(2*cos(aux1*rad)*num3*aux2));
+										
+					cout << "los lados son: "<<endl;
+					cout << "  a: "<<num3<<endl;
+					cout << "  b: "<<aux2<<endl;
+					cout << "  c: "<<aux3<<endl;
+										
+					cout << "los angulos son: "<<endl;
+					cout << "  A: "<<num1<<endl;
+					cout << "  B: "<<num2<<endl;
+					cout << "  C: "<<aux1<<endl;
+					
+					cout << "las medianas son: "<<endl;
+					cout <<"  Ma= "<<(sqrt(2*(aux2*aux2+aux3*aux3)-num3*num3))/2<<endl;
+					cout <<"  Mb= "<<(sqrt(2*(num3*num3+aux3*aux3)-aux2*aux2))/2<<endl;
+					cout <<"  Mc= "<<(sqrt(2*(aux2*aux2+num3*num3)-aux3*aux3))/2<<endl;
+					
+					cout << "el area:  "<<(num3*sin(aux1*rad)*aux2)/2<<endl;
+					cout << "el perimetro:  "<<num3+aux2+aux3<<endl;	
+				}
+				else
+			    cout<<"NO TIENE SOLUCION"<<endl;
 			    break;
     
 			    case 'b': // para A B b

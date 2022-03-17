@@ -341,11 +341,9 @@ int main ()
             break;
 
             case 12:
-            cout<<"la factorizacion de cholesky de la primera matriz es: \n";
-            FactorizacionCholesky (matrizA, filaA);
+            cout<<"la factorizacion de cholesky de la matriz es: \n";
+            FactorizacionCholesky (matriz1, orden);
             
-            cout<<"\n\nla factorizacion de cholesky de la primera matriz es: \n\n";
-            FactorizacionCholesky (matrizB,  filaB);
             break;
         }
 
@@ -439,7 +437,7 @@ void Inicializador2 (double inversa[][10], int filaC, int columnaC)
     }
 }
 
-void FactorizacionCholesky (int matrizC [][10], int orden)
+void FactorizacionCholesky (int matriz1 [][10], int orden)
 {
     int matrizT[10][10], matriz[10][10];
     for (int f = 0; f < orden; ++f)
@@ -455,7 +453,7 @@ void FactorizacionCholesky (int matrizC [][10], int orden)
     {
         for (int c = 0; c < orden; ++c)
         {   
-            if (matrizC[c][f] == matrizC[f][c]) {continue;}
+            if (matriz1[c][f] == matriz1[f][c]) {continue;}
             else {Prueba = 'F';}
         }    
     }
@@ -473,7 +471,7 @@ void FactorizacionCholesky (int matrizC [][10], int orden)
                     {
                         sumatoria += pow (matriz[i][k], 2);
                     }
-                    matriz[i][j] = sqrt ( matrizC[i][j] - sumatoria); 
+                    matriz[i][j] = sqrt ( matriz1[i][j] - sumatoria); 
                 }
                 else if (j > i) {matriz[i][j] = 0;}
                 else 
@@ -483,7 +481,7 @@ void FactorizacionCholesky (int matrizC [][10], int orden)
                     {
                         sumatoria += matriz[i][k] * matriz[j][k];
                     }
-                    matriz[i][j] = ( matrizC[i][j] - sumatoria) / matriz[j][j];
+                    matriz[i][j] = ( matriz1[i][j] - sumatoria) / matriz[j][j];
                 }
             }
         }

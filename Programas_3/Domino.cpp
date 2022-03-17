@@ -14,7 +14,7 @@ de forma que el segundo número de cada ficha coincida con el primero de la sigu
  
 using namespace std;
  char stopApp;
-#define CARAS 6  // crea un macro para identificar
+#define CARAS 8  // crea un macro para identificar
 void delay(int secs) {
   for(int i = (time(NULL) + secs); time(NULL) != i; time(NULL));
 }
@@ -131,7 +131,9 @@ ostream& operator << (ostream& os, Ficha c)
  
 {
     os << "[ " << c.lado1 << " | " << c.lado2 << " ]";
+    delay(1);
     return os;
+    
 }
  
  
@@ -239,7 +241,7 @@ protected:
 Jugador::Jugador(string n, Mesa& m)
 {
    name = n;
-   for (int i=0; i<7; i++)
+   for (int i=0; i<9; i++)
    {
        Ficha f = m.robar();
        fichas.push_back(f);
@@ -380,14 +382,23 @@ int sec;
     int juegos_j2 = 0;
  delay(1);
 	Mesa m;
+   cout<<endl;
+   cout<<endl;
+cout<<"             Repartiendo las fichas:...."<<endl;
+delay(2);
     JugadorTonto j1("player1", m);
     JugadorTonto j2("player2", m);
  delay(1);
     cout << j1;
+    delay(1);
     cout << j2;
  delay(1);
     Ficha f1 = j1.cand_comienzo();
     Ficha f2 = j2.cand_comienzo();
+    cout<<endl;
+    cout<<"     Eligiendo que jugador comienza: "<<endl;
+    cout<<endl;
+    delay(2);
     cout << "Mejor ficha jugador 1: " << f1 << endl;
     cout << "Mejor ficha jugador 2: " << f2 << endl;
  delay(1);
@@ -454,10 +465,15 @@ int sec;
        }
     }
   delay(2);
-    cout << "Mesa: " << endl << m << endl << "Fin mesa" << endl;
-    cout << j1;
-    cout << j2;
+  cout<<endl;
+  cout<<"     Se inicia el juego!!!"<<endl;
   delay(2);
+    cout << "Mesa: " << endl << m << endl << "Fin mesa" << endl;
+    delay(2);
+    cout << j1;
+    delay(2);
+    cout << j2;
+ delay(2);
     if (j1.cant_fichas() < j2.cant_fichas())
     {
        juegos_j1++;
@@ -474,6 +490,9 @@ int sec;
          juegos_j2++;
     }
 
+cout<<endl;
+cout<<"     Y el ganador del juego es:...."<<endl;
+delay(2);
     cout << "Juegos J1: " << juegos_j1 << endl;
     cout << "Juegos J2: " << juegos_j2 << endl;
     

@@ -34,12 +34,12 @@ int Verificador (string Variable, int limiteDerecho, int limiteIzquierdo)
     while (true)        //Para la verificacion de datos
     {
         cout << "Ingrese "<<Variable<<" (de "<<limiteDerecho<<" a "<<limiteIzquierdo<<") : "; cin >> x;
-        if (cin.fail()) // Si nada se pone será verdadero
+        if (cin.fail()) // Si nada se pone serÃ¡ verdadero
         {   cout<<"Caracter invalido\n";
             cin.clear(); // Para resetear los bits
             cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
             //ignore() es usado para limpiar los datos incorrectos
-            continue; // El ciclo iniciará de nuevo
+            continue; // El ciclo iniciarÃ¡ de nuevo
         }
         //Para limpiar datos adicionales como: atr15 (atr es adicional)
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
@@ -47,11 +47,11 @@ int Verificador (string Variable, int limiteDerecho, int limiteIzquierdo)
         if (cin.gcount() > 1) 
         // Devolvera mas de 1 si hay algun sobrante de datos invalidos
         {   cout<<"Caracter invalido, no te pases de listo\n";
-            continue; // el ciclo iniciará de nuevo
+            continue; // el ciclo iniciarÃ¡ de nuevo
         }
         if (x<limiteIzquierdo || x>limiteDerecho)       //poniendo limite al numero de caracteres escritos
         {   cout<<"Limite de caracteres alcanzado\n";
-            continue;   //el ciclo iniciará de nuevo
+            continue;   //el ciclo iniciarÃ¡ de nuevo
         }
         return x;
         break; //rompe el ciclo
@@ -67,12 +67,12 @@ int Verificador2 (int limiteDerecho, int limiteIzquierdo, int n)
     {
         Space(n);
         cin >> y;
-        if (cin.fail()) // Si nada se pone será verdadero
+        if (cin.fail()) // Si nada se pone serÃ¡ verdadero
         {   cout<<"\n"; 
             cin.clear(); // Para resetear los bits
             cin.ignore(numeric_limits<streamsize>::max(), '\n');    
             //ignore() es usado para limpiar los datos incorrectos
-            continue; // El ciclo iniciará de nuevo
+            continue; // El ciclo iniciarÃ¡ de nuevo
         }
         //Para limpiar datos adicionales como: atr15 (atr es adicional)
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
@@ -80,11 +80,11 @@ int Verificador2 (int limiteDerecho, int limiteIzquierdo, int n)
         if (cin.gcount() > 1) 
         // Devolvera mas de 1 si hay algun sobrante de datos invalidos
         {   cout<<"\n"; 
-            continue; // el ciclo iniciará de nuevo
+            continue; // el ciclo iniciarÃ¡ de nuevo
         }
         if (y<limiteIzquierdo || y>limiteDerecho)       //poniendo limite al numero de caracteres escritos
         {   cout<<"\n"; 
-            continue;   //el ciclo iniciará de nuevo
+            continue;   //el ciclo iniciarÃ¡ de nuevo
         }
         return y;
         break; //rompe el ciclo
@@ -94,22 +94,31 @@ int Verificador2 (int limiteDerecho, int limiteIzquierdo, int n)
 //aqui se introducen los datos de cada matriz, mientras el operador ve cual sera la forma de la misma
 void EntradaDeDatos (int matrizA [][10], int matrizB [][10], 
 int filaA, int filaB, int columnaA, int columnaB);
+
 //matriz cholesky
 void FactorizacionCholesky (int matrizC [][10], int orden);
+
 //matriz transpuesta
 void Transpuesta (int matriz[][10], int orden);
+
 //matriz unica
 void EntradaDeDats (int matriz1 [][10], 
 int orden);
+
 int determinante(int matriz1[][10],int orden);
+
 int cofactor(int matriz1[][10],int orden, int fila, int columna);
+
 // Factorizacion LU
 void factorizacionLU(int matriz1[][10], int matrizL[][10], int matrizU[][10], int orden);
+
 //matriz triangular
 void inferior(int matriz1[][10], int orden);
 void superior(int matriz1[][10], int orden);
+
 // escalar
 void Escalar(int matriz1[][10], int orden);
+
 //multiplica las matrices
 void Multiplicador (int matrizA [][10], int matrizB [][10], int resultado [][10],
 int filaA, int filaB, int columnaA, int columnaB);
@@ -157,43 +166,43 @@ int main ()
         cout<<"\tSi desea realizar operaciones con 2 matrices ingrese '1',\n"; 
         cout<<"\tsi quiere hallar el determinante, Factorizacion LU, etc '2'\n\n -"; 
         cin>>des;
-        if (des==1){
-        //pide al usuario definir las dimensiones de las matrices a ingresar
-        filaA = Verificador ("el numero entero de filas de la Primera Matriz", 10, 0);
-        columnaA = Verificador ("el numero entero de columnas de la Primera Matriz", 10, 0);
-        filaB = Verificador ("el numero entero de filas de la Segunda Matriz", 10, 0);
-        columnaB = Verificador ("el numero entero de columnas de la Segunda Matriz", 10, 0);
+        if (des==1)
+        {
+            //pide al usuario definir las dimensiones de las matrices a ingresar
+            filaA = Verificador ("el numero entero de filas de la Primera Matriz", 10, 0);
+            columnaA = Verificador ("el numero entero de columnas de la Primera Matriz", 10, 0);
+            filaB = Verificador ("el numero entero de filas de la Segunda Matriz", 10, 0);
+            columnaB = Verificador ("el numero entero de columnas de la Segunda Matriz", 10, 0);
 
-        //pide al usuario definir la operacion que se hara entre las matrices
-        cout<<"\n\nMultiplicacion = 1    Division = 2     Suma = 3    Resta = 4    Ninguno = 5\n";
-        Operador = Verificador ("el operador que desea usar", 5, 1);
+            //pide al usuario definir la operacion que se hara entre las matrices
+            cout<<"\n\nMultiplicacion = 1    Division = 2     Suma = 3    Resta = 4    Ninguno = 5\n";
+            Operador = Verificador ("el operador que desea usar", 5, 1);
 
-        //pide al usuario ingresar los elementos de cada matriz
-        EntradaDeDatos (matrizA, matrizB, filaA, filaB, columnaA, columnaB);
- }
-				if (des==2)
+            //pide al usuario ingresar los elementos de cada matriz
+            EntradaDeDatos (matrizA, matrizB, filaA, filaB, columnaA, columnaB);
+        }
+		if (des==2)
 		{
-		cout << "Ingresa el orden de la matriz (maximo " << 10 << "): ";
-		cin>>orden;
-		while (orden < 0 || orden > 10) {
-      cout << "\nEl orden de la matriz no puede ser mayor que " << 10 << endl;
-      cout << "Ingrese nuevamente el orden de la matriz: ";
-      cin >> orden;
-   }
+            cout << "Ingresa el orden de la matriz (maximo " << 10 << "): ";
+            cin>>orden;
+            while (orden < 0 || orden > 10) 
+            {
+                cout << "\nEl orden de la matriz no puede ser mayor que " << 10 << endl;
+                cout << "Ingrese nuevamente el orden de la matriz: ";
+                cin >> orden;
+            }
    
-   cout << "\nIngrese los elementos de la matriz:\n\n";
-   for (int i = 0; i < orden; i++) {
-      for (int j = 0; j < orden; j++) {
-         cin >> matriz1[i][j];
-      }
-   }
-        cout<<"\n\ndeterminante = 6    L.U = 7     Elevada = 8    Diagonal = 9    Triangular = 10\n";
-        cout<<"\nEscalar = 11    \n";
-        Operador = Verificador ("el operador que desea usar", 11, 6);
-
-        //pide al usuario ingresar los elementos de cada matriz
-        
+            cout << "\nIngrese los elementos de la matriz:\n\n";
+            for (int i = 0; i < orden; i++) 
+            {
+                for (int j = 0; j < orden; j++)     {cin >> matriz1[i][j];}
+            }
+            cout<<"\n\ndeterminante = 6    L.U = 7     Elevada = 8    Diagonal = 9    Triangular = 10\n";
+            cout<<"\nEscalar = 11    Factorizacion de Cholesky = 12\n";
+            Operador = Verificador ("el operador que desea usar", 13, 5);
 		}
+
+        //Para cada operacion que el usuario elija
         switch (Operador) 
         {
             case 1: 
@@ -235,7 +244,8 @@ int main ()
                         cout<<"Las filas de A: "<<filaA<<" son iguales a las filas de B: "<<filaB;}
             break;
             //si cumplen las condiciones se operara las matrices
-            case 4: if ((columnaA == columnaB) && (filaA == filaB))
+            case 4: 
+            if ((columnaA == columnaB) && (filaA == filaB))
             {   //prepara la matriz resultante
                 Inicializador (resultado, filaA, columnaB); cout<<endl;
                 
@@ -252,98 +262,97 @@ int main ()
                         cout<<"Las columnas de A: "<<columnaA<<" no son iguales a las columnas de B: "<<columnaB<<" y tampoco \n";
                         cout<<"Las filas de A: "<<filaA<<" son iguales a las filas de B: "<<filaB;}
             break;
-             
-        
+
             case 6:
             cout << "\nMostrando la matriz ingresada:\n";
    			EntradaDeDats(matriz1, orden);
    			cout << "\nEl determinante es: " << determinante(matriz1, orden) << endl;
 		    break;
-		    case 7:
-		     factorizacionLU(matriz1, matrizL, matrizU, orden);
-  			 cout << "La descomposicion de L: "<<endl;
-  			 for (int i = 0; i < orden; i++) {
-   			 for (int j = 0; j < orden; j++) {
-     		 cout<<matrizL[i][j]<<" ";
-     		 }
-    		  cout << endl;
-   			}
-  			 cout << "La descomposicion de U: "<<endl;
-  			 for (int i = 0; i < orden; i++) {
-    	     for (int j = 0; j < orden; j++) {
-    	     cout<<matrizU[i][j]<<" ";
-    		}
-           cout << endl;
-   			}	
-		    break;
-		    case 8:
-		    cout << "\nPotencia: ";
-     		cin >> potencia;
-			cout << "\nEl resultado de la matriz es:\n";
-    		for (int i = 0; i < orden; i++)
-    		{
-       		 cout << " | ";
-       		 for (int j = 0; j < orden; j++)
-       		 {
-             cout << pow(matriz1[i][j], potencia) << " ";
-       		 }
-       		 cout << " |\n";
-    		 }
-		    break;
-		case 9:
-		    for (int i = 0; i < orden; i++)
-    	{
-        cout << "\n| ";
-        for (int j = 0; j < orden; j++)
-        {
-            cout << matriz1[i][j] << " ";
- 
-            if (i != j)
-            {
-                if (matriz1[i][j] != 0)
-                    esDiagonal = false;
-            }
-            else
-            {
-                if (matriz1[i][j] == 0)
-                    esDiagonal = false;
-            }
-        }
-        cout << " |";
-    }
- 
-    cout << endl << endl;
-    if (!esDiagonal)
-        cout << "NO ";
- 
-    cout << "Es Diagonal" << endl;
- 
-    cout << endl;	
-		    break;
-		case 10:
-			
-		cout << "Matriz triangular inferior: \n";
-        inferior(matriz1, orden);
-        cout << "Matriz triangular superior: \n";
-		superior(matriz1, orden);
-		break;
-        
-		case 11:
 
-		cout << "Matriz multiplicada por un escalar: \n";
-		 Escalar(matriz1, orden);	
-			break;
+		    case 7:
+            factorizacionLU(matriz1, matrizL, matrizU, orden);
+            cout << "La descomposicion de L: "<<endl;
+            for (int i = 0; i < orden; i++) 
+            {
+                for (int j = 0; j < orden; j++)     {cout<<matrizL[i][j]<<" ";}
+                cout << endl;
+            }
+            cout << "La descomposicion de U: "<<endl;
+            for (int i = 0; i < orden; i++) 
+            {
+                for (int j = 0; j < orden; j++)     {cout<<matrizU[i][j]<<" ";}
+                cout << endl;
+   			}	
+            break;
+
+            case 8:
+            cout << "\nPotencia: ";
+            cin >> potencia;
+            cout << "\nEl resultado de la matriz es:\n";
+            for (int i = 0; i < orden; i++)
+            {
+                cout << " | ";
+                for (int j = 0; j < orden; j++) {cout << pow(matriz1[i][j], potencia) << " ";}
+                cout << " |\n";
+    		}
+		    break;
+
+		    case 9:
+		    for (int i = 0; i < orden; i++)
+            {
+                cout << "\n| ";
+                for (int j = 0; j < orden; j++) 
+                {   
+                    cout << matriz1[i][j] << " ";
+                    if (i != j)
+                    {
+                        if (matriz1[i][j] != 0)
+                            esDiagonal = false;
+                    }
+                    else
+                    {
+                        if (matriz1[i][j] == 0)
+                            esDiagonal = false;
+                    }
+                }
+                cout << " |";
+            }
+            cout << endl << endl;
+            if (!esDiagonal)
+                cout << "NO ";
+        
+            cout << "Es Diagonal" << endl;
+        
+            cout << endl;	
+		    break;
+
+            case 10:
+                
+            cout << "Matriz triangular inferior: \n";
+            inferior(matriz1, orden);
+            cout << "Matriz triangular superior: \n";
+            superior(matriz1, orden);
+            break;
+        
+            case 11:
+
+            cout << "Matriz multiplicada por un escalar: \n";
+            Escalar(matriz1, orden);	
+            break;
+
+            case 12:
+            cout<<"la factorizacion de cholesky de la primera matriz es: \n";
+            FactorizacionCholesky (matrizA, filaA);
+            
+            cout<<"\n\nla factorizacion de cholesky de la primera matriz es: \n\n";
+            FactorizacionCholesky (matrizB,  filaB);
+            break;
         }
+
         cout<<endl;
-cout<<"la factorizacion de cholesky de la primera matriz es: \n";
-        FactorizacionCholesky (matrizA, filaA);
-        
-        cout<<"\n\nla factorizacion de cholesky de la primera matriz es: \n\n";
-        FactorizacionCholesky (matrizB,  filaB);
-        
+
         cout<<"\nPara reiniciar la calculadora ingrese 'Y' (Si), si no quiere ingrese cualquier tecla\n";
         cin>>Apagado;
-       
     }
 
     while(toupper(Apagado) == 'Y');
@@ -362,7 +371,7 @@ int filaA, int filaB, int columnaA, int columnaB)
     //datos que no sean numeros enteros o que se salgan del limite
 
     //el ciclo for() ira pasando
-    //columna por columna y cuando pase el tamaño maximo a la siguiente
+    //columna por columna y cuando pase el tamaÃ±o maximo a la siguiente
     //fila, hasta pasar por cada elemento de ambas matrices
     //f es fila y c es columna 
 
@@ -395,7 +404,7 @@ void Inicializador (int resultado [][10], int filaC, int columnaC)
     //tengan problemas con la matriz resultante
 
     //el ciclo for() ira pasando
-    //columna por columna y cuando pase el tamaño maximo a la siguiente
+    //columna por columna y cuando pase el tamaÃ±o maximo a la siguiente
     //fila, hasta pasar por cada elemento de ambas matrices
     //f es fila y c es columna 
 
@@ -417,7 +426,7 @@ void Inicializador2 (double inversa[][10], int filaC, int columnaC)
     //tengan problemas con la matriz resultante
 
     //el ciclo for() ira pasando
-    //columna por columna y cuando pase el tamaño maximo a la siguiente
+    //columna por columna y cuando pase el tamaÃ±o maximo a la siguiente
     //fila, hasta pasar por cada elemento de ambas matrices
     //f es fila y c es columna 
 
@@ -539,7 +548,7 @@ int filaA, int filaB, int columnaA, int columnaB)
     int f, c;
     //basicamente esta sumando cada elemento de ambas matrices con las mismas
     //coordenadas, gracias a que el ciclo for() ira pasando
-    //columna por columna y cuando pase el tamaño maximo a la siguiente
+    //columna por columna y cuando pase el tamaÃ±o maximo a la siguiente
     //fila, hasta pasar por cada elemento de ambas matrices
     //f es fila y c es columna 
     for (f = 0; f < filaA; ++f)
@@ -557,7 +566,7 @@ int filaA, int filaB, int columnaA, int columnaB)
     int f, c;
     //basicamente esta restando cada elemento de ambas matrices con las mismas
     //coordenadas, gracias a que el ciclo for() ira pasando
-    //columna por columna y cuando pase el tamaño maximo a la siguiente
+    //columna por columna y cuando pase el tamaÃ±o maximo a la siguiente
     //fila, hasta pasar por cada elemento de ambas matrices
     //f es fila y c es columna 
     for (f = 0; f < filaA; ++f)
@@ -577,7 +586,7 @@ int filaC, int columnaC)
     //hasta cada fila, ademas de poner la matriz entre barras
     
     //El ciclo for() ira pasando
-    //columna por columna y cuando pase el tamaño maximo a la siguiente
+    //columna por columna y cuando pase el tamaÃ±o maximo a la siguiente
     //fila, hasta pasar por cada elemento de ambas matrices
     //f es fila y c es columna 
 
@@ -611,6 +620,7 @@ int filaA, int filaB, int columnaA, int columnaB, char operador)
     Space(columnaB/2 + 1);  cout<<"|  |\n\n";
     SalidaDeDatos2 (resultado, filaA, columnaB);
 }
+
 void EntradaDeDats(int matriz1[][10], int orden)
 {
    cout << "Orden: " << orden << endl;
@@ -660,6 +670,7 @@ int cofactor(int matriz1[][10], int orden, int fila, int columna)
    
    return pow(-1.0, fila + columna) * determinante(submatriz, n);
 }
+
 //factorizacion LU
 void factorizacionLU(int matriz1[][10], int matrizL[][10], int matrizU[][10], int orden) {
    int i = 0, j = 0, k = 0;
@@ -688,6 +699,7 @@ void factorizacionLU(int matriz1[][10], int matrizL[][10], int matrizU[][10], in
       }
    }
 }
+
 //Funcion matriz inferior
 void inferior(int matriz1[][10], int orden)
 {
@@ -726,6 +738,7 @@ void superior(int matriz1[][10], int orden)
         cout << endl;
     }
 }
+
 //multiplicacion por un escalar
 void Escalar(int matriz1[][10], int orden)
 {

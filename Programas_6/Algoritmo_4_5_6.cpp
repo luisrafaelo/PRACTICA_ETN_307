@@ -3,22 +3,6 @@
 #include <limits>
 using namespace std;
 
-//LEER, MUY IMPORTANTE
-
-//Solo copia el contenido dentro de case 1, 2, 3  (son los enunciados)
-
-//y tambien los codigos (junto con su contenido):   (son las funciones recursivas y mi verificador de datos)
-//int suma_recursiva (int[], int)
-//int sucesion_recursiva (int)
-//int mcd_recursivo (int, int)
-//int Verificador2 (string, int, string, int, int);
-
-//SE USARON LAS VARIABLES:     int m    int c   int a    int b     int *arreglo
-//SI LO VES NECESARIO CAMBIA LAS VARIABLES, PUEDE PASAR QUE LAS HAYAS USADO TAMBIEN
-
-//NO OLVIDES QUE SI PEGAS MI CODIGO EN UN CASE, PONLO JUNTO A {} HASTA ANTES DE   break;
-//POR QUE CASE REQUIERE ESO CUANDO SE LE DECLARAN VARIABLES DENTRO SUYO 
-//Finalmente, los añades a tu codigo y ya :)
 
 int Verificador2 (string, int, string, int, int);
 

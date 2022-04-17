@@ -1,6 +1,9 @@
-#include<iostream>
+#include <iostream>
+#include <math.h>
+#include <iomanip>
+
 using namespace std;
- 
+
 class Quadratic{
    
 public:
@@ -30,16 +33,16 @@ void findRoots(int a, int b, int c)
             << float((-b - sqrt_val) / (2 * a)) << endl;
     }
  
-    // Imaginary Roots
+    // Raices imaginarias
     else
     {
         cout << "Las raices son complejas" << endl;
         cout << fixed <<setprecision(1)
-             << float(b / (2.0 * a)) << " + i"
-             << sqrt_val << endl;
+             << float(-b / (2.0 * a)) << " + i"
+             << sqrt_val/ (2 * a) << endl;
         cout << fixed << setprecision(1)
-             << float(b / (2.0 * a)) << " - i"
-             << sqrt_val << endl;
+             << float(-b / (2.0 * a)) << " - i"
+             << sqrt_val/ (2 * a) << endl;
     }
 }
 };

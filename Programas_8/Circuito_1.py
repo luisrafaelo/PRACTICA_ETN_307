@@ -1,1 +1,45 @@
+from sympy import symbols, Eq, solve
+encendido = "Y"
+while not encendido == "N":
+    print("\n\t\t\t CIRCUITO N1\n")
+    print("\t\t    I1                   I2")
+    print("\t\t  ┌───►──R1───┬─────R2───►┐")
+    print("\t\t +│           ↓ I5        |+")
+    print("\t\t V1           R5          V2")
+    print("\t\t  │I4       + | I6        |")
+    print("\t\t  ├◄──R4──V4──┴─◄──R6─────┤")
+    print("\t\t  │              +        │")
+    print("\t\t  └─────R3────◄────V3─────┘")
+    print("\t\t              I3          ")   
+  
+    print("\nIngrese R1, R2 ,R3, R4, R5, R6, separado por espacios:\n")
+    R1, R2, R3, R4, R5, R6 = map(int, input().split())
+    print ("Ingrese V1, V2, V3, V4, separados por espacios\n")
+    V1, V2, V3, V4 = map(int, input().split())
+    I1, I2, I3, I4, I5, I6 = symbols("I1 I2 I3 I4 I5 I6")
 
+    ecu_1 = Eq((R1+R4+R5)*I1 - R5*I2 - R4*I3,(V4-V1))
+    ecu_2 = Eq((-R5)*I1 + (R2+R6+R5)*I2 - R6*I3,V2)
+    ecu_3 = Eq((-R4)*I1 + -R6*I2 + (R3+R4+R6)*I3,(-V3-V4))
+    ecu_4 = Eq(I4 + (-1)*I1 + 0*I2 + 1*I3,0)
+    ecu_5 = Eq(I5 + (-1)*I1 + 1*I2 + 0*I3,0)
+    ecu_6 = Eq(I6 + 0*I1 + (-1)*I2 + 1*I3,0)
+
+    solucion = solve([ecu_1, ecu_2, ecu_3, ecu_4, ecu_5, ecu_6], [I1, I2, I3, I4, I5, I6])
+    Ia = round(solucion [I1],5)
+    Ib = round(solucion [I2],5)
+    Ic = round(solucion [I3],5)
+    Id = round(solucion [I4],5)
+    Ie = round(solucion [I5],5)
+    If = round(solucion [I6],5)
+    print("las Corrientes son:")
+    print("\nI1:",-Ia)
+    print("\nI2:",-Ib)
+    print("\nI3:",-Ic)
+    print("\nI4:",-Id)
+    print("\nI5:",-Ie)
+    print("\nI6:",-If)
+    encendido = input("\nSi desea seguir en el programa digite 'Y' caso contrario 'N':   ").upper()
+print("\n\n\tGracias, hasta luego!!")
+
+            
